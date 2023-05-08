@@ -7,12 +7,14 @@ const mensaje = document.querySelector(".mensaje");
 // La letra "o" es convertida para "ober"
 // La letra "u" es convertida para "ufat"
 
+
 function btnEncriptar() {
-  const textoEncriptado = encriptar(textArea.value);
-  mensaje.value = textoEncriptado;
-  textArea.value = "";
-  mensaje.style.backgroundImage = "none";
+    const textoEncriptado = encriptar(textArea.value);
+    mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
 }
+
 let matrizCodigo = [
   ["e", "enter"],
   ["i", "imes"],
@@ -20,7 +22,6 @@ let matrizCodigo = [
   ["o", "ober"],
   ["u", "ufat"],
 ];
-
 function encriptar(stringEncriptada) {
   stringEncriptada = stringEncriptada.toLowerCase();
 
@@ -33,4 +34,24 @@ function encriptar(stringEncriptada) {
     }
   }
   return stringEncriptada;
+}
+
+function btnDesencriptar() {
+  const textoEncriptado = desencriptar(textArea.value);
+  mensaje.value = textoEncriptado;
+  textArea.value = "";
+}
+
+function desencriptar(stringDesencriptada) {
+  stringDesencriptada = stringDesencriptada.toLowerCase();
+  for (let i = 0; i < matrizCodigo.length; i++) {
+    if (stringDesencriptada.includes(matrizCodigo[i][1])) {
+      stringDesencriptada = stringDesencriptada.replaceAll(
+        matrizCodigo[i][1],
+        matrizCodigo[i][0]
+      );
+    }
+  }
+
+  return stringDesencriptada;
 }
