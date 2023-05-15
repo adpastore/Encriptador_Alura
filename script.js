@@ -8,13 +8,7 @@ const mensaje = document.querySelector(".mensaje");
 // La letra "u" es convertida para "ufat"
 
 
-function btnEncriptar() {
-    const textoEncriptado = encriptar(textArea.value);
-    mensaje.value = textoEncriptado;
-    textArea.value = "";
-    mensaje.style.backgroundImage = "none";
-}
-
+//Matriz de codificación
 let matrizCodigo = [
   ["e", "enter"],
   ["i", "imes"],
@@ -22,6 +16,16 @@ let matrizCodigo = [
   ["o", "ober"],
   ["u", "ufat"],
 ];
+
+//Crea la función para el botón de encriptar
+function btnEncriptar() {
+    const textoEncriptado = encriptar(textArea.value);
+    mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
+}
+
+// Función que encripta
 function encriptar(stringEncriptada) {
   stringEncriptada = stringEncriptada.toLowerCase();
 
@@ -36,12 +40,14 @@ function encriptar(stringEncriptada) {
   return stringEncriptada;
 }
 
+// Función del botón desencriptar
 function btnDesencriptar() {
   const textoEncriptado = desencriptar(textArea.value);
   mensaje.value = textoEncriptado;
   textArea.value = "";
 }
 
+//Función que desencripta
 function desencriptar(stringDesencriptada) {
   stringDesencriptada = stringDesencriptada.toLowerCase();
   for (let i = 0; i < matrizCodigo.length; i++) {
@@ -54,4 +60,34 @@ function desencriptar(stringDesencriptada) {
   }
 
   return stringDesencriptada;
+}
+
+// Función del botón copiar
+function btnCopiar() {
+  let textarea = document.getElementById("mensaje");
+  let texto = textarea.value;
+
+  // Crea un elemento de texto temporal
+  let elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+
+  // Selecciona el contenido del elemento de texto temporal
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+  // Copia el contenido seleccionado al portapapeles
+  navigator.clipboard.writeText(texto)
+  .then(function() {
+    // Éxito al copiar al portapapeles
+    alert("Agregaste al portapapeles: " + texto);
+  })
+  .catch(function(error) {
+    // Error al copiar al portapapeles
+    console.error("Error al copiar al portapapeles:", error);
+  });
+
+  // Elimina el elemento de texto temporal
+  document.body.removeChild(elementoTemporal);
+
 }
