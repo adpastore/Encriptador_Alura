@@ -3,7 +3,7 @@
   font-family: 'Press Start 2P', cursive;
   font-weight: 400;
   font-size: 20px;
-  line-height: 150%;
+  line-height: 120%;
   overflow: hidden;
 }
 
@@ -13,21 +13,30 @@ body {
   background-size: cover;
 }
 
+header{
+  display: flex;
+}
+.bunker{
+  margin-left: 10%;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #6bc207;
+}
+
 .logo {
   padding-top: 10px;
   margin-left: 30px;
-  width: 3%;
+  size: 10%;
 }
 
 main {
   display: flex;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   margin-bottom: 50px;
-  padding: 0 40px;
+  padding: 0 5px;
 }
 
 .text-area {
-  height: 400px;
+  height: 300px;
   background-color: rgba(226, 148, 58, 0.3);
   border: none;
   color: #dae7e8;
@@ -37,7 +46,7 @@ main {
 }
 
 ::placeholder {
-  color: #7d871b;
+  color: #6bc207;
 }
 
 .text-area:focus {
@@ -45,7 +54,7 @@ main {
 }
 
 .mensaje {
-  height: 650px;
+  height: 450px;
   width: 340px;
   background: #E09C4E;
   background-color: rgba(226, 148, 58, 0.3);
@@ -55,8 +64,8 @@ main {
   border: none;
   border-radius: 24px;
   color: #8a3871;
-  margin-top: 30px;
-  padding:  20px;
+  margin-top: 10px;
+  padding:  15px;
 }
 
 .mensaje:focus {
@@ -65,7 +74,7 @@ main {
 
 .botones {
   display: flex;
-  margin-top: 18px;
+  margin-top: 5px;
 }
 
 .btn-desencriptar {
@@ -88,24 +97,70 @@ main {
   height: 67px;
   width: 328px;
 }
+
 .encriptado{
   position: relative;
+  padding: 10px;
 }
 
 .btn-copiar {
-  background-color: #525157;
+  background-color: #060000;
   border: 1px solid #C77C30;
-  border-radius: 24px;
+  border-radius: 50px;
   color: #eee0e0;
   cursor: pointer;
   height: 67px;
-  width: 336px;
-  left: 20px;
-  bottom: 30px;
+  width: 67px;
+  left: 150px;
+  bottom: 15px;
   position: absolute;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
 }
+
+.enigma p{
+  color: #eee0e0;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 15%;
+}
+
 
 .informacion {
   color: #80d105;
   font-size: 18px;
+}
+
+.panel {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 2px rgba(255, 252, 252, 0.776), -2px -2px 2px rgba(11, 11, 11, 0.017);
+  background-image: url(./imagenes/acero.jpeg);
+  background-repeat: repeat;
+  border-radius: 10px;
+  padding: 20px;
+  position:fixed;
+  margin-left: 100px;
+  box-shadow: 2px 5px 9px 0px #444C44
+ }
+
+.panel::before,
+.panel::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url(./imagenes/cabeza-de-tornillo.png);
+}
+
+.panel::before {
+  top: 0;
+  left: 0;
+}
+
+.panel::after {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
 }
