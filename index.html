@@ -11,11 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Encriptador</title>
   </head>
   <body>
     <header>
-      <img class="logo" src="imagenes/Vector.png" alt="Logo Alura" />
+      <img class="logo" src="./imagenes/Vector.png" alt="Logo Alura" />
     </header>
     <main>
       <section>
@@ -33,14 +36,22 @@
           <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
         </div>
       </section>
-      <section>
+      <section class="encriptado">
         <textarea id="mensaje" class="mensaje" cols="20" rows="10"></textarea>
-        <div>
+        
           <button class="btn-copiar" onclick ="btnCopiar()">Copiar</button>
-        </div>
+       
+      </section>
+        <section class="enigma">
+          <h4>Enigma es la máquina</h4> 
+            <h4>de cifrado más famosa</h4> 
+            <h4>del mundo.</h4>
+            <h4>Jugó un papel clave</h4> 
+            <h4>en la Segunda Guerra</h4>
+            <h4>Mundial.</h4>
       </section>
     </main>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
 <!--Ningún mensaje fue encontrado-->

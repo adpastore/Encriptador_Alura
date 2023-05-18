@@ -74,20 +74,12 @@ function btnCopiar() {
 
   // Selecciona el contenido del elemento de texto temporal
   elementoTemporal.select();
-  elementoTemporal.setSelectionRange(0, 99999); // Para dispositivos móviles
-
-  // Copia el contenido seleccionado al portapapeles
+  
+  // Copia al portapapeles
   navigator.clipboard.writeText(texto)
-  .then(function() {
-    // Éxito al copiar al portapapeles
-    alert("Agregaste al portapapeles: " + texto);
-  })
-  .catch(function(error) {
-    // Error al copiar al portapapeles
-    console.error("Error al copiar al portapapeles:", error);
-  });
-
-  // Elimina el elemento de texto temporal
+  .then(function() {});
+    
+  // Elimina el texto de la memoria
   document.body.removeChild(elementoTemporal);
 
 }
