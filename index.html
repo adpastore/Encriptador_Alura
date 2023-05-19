@@ -11,15 +11,27 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <title>Encriptador</title>
   </head>
   <body>
     <header>
       <img class="logo" src="./imagenes/Vector.png" alt="Logo Alura" />
-      <h5 class="bunker">La imágen pertenece a un sector del Führerbunker, de la Segunda Guerra Mundial</h5>
+      <h5 class="bunker">
+        La imágen pertenece a un sector del Führerbunker (Bunker de Adolf Hitler), de la Segunda Guerra
+        Mundial
+      </h5>
     </header>
     <main>
       <section>
@@ -33,24 +45,31 @@
           <h6 class="informacion">Sólo letras minúsculas y sin acentos</h6>
         </div>
         <div class="botones">
-          <button class="btn-encriptar" onclick ="btnEncriptar()">Encriptar</button>
-          <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+          <button class="btn-encriptar" onclick="btnEncriptar()">
+            E
+          </button>
+          <div id="panel1" class="panel">Tecla: Encriptar</div>
+          <button class="btn-desencriptar" onclick="btnDesencriptar()">
+            D
+          </button>
+          <div id="panel2" class="panel">Tecla: Desencriptar</div>
         </div>
       </section>
-      
+
       <section class="encriptado">
         <textarea id="mensaje" class="mensaje" cols="20" rows="10"></textarea>
-        <button class="btn-copiar" onclick ="btnCopiar()">C</button>
+        <button class="btn-copiar" onclick="btnCopiar()">C</button>
         <div class="panel">Tecla: Copiar</div>
       </section>
 
       <section class="enigma">
-          <p>Enigma es la máquina</p> 
-          <p>de cifrado más famosa</p> 
-          <p>del mundo.</p>
-          <p>Jugó un papel clave</p> 
-          <p>en la Segunda Guerra</p>
-          <p>Mundial.</p>
+        <p>Esta antigüedad es</p>
+        <p>"Enigma", la máquina</p>
+        <p>de cifrado más famosa</p>
+        <p>del mundo.</p>
+        <p>Jugó un papel clave</p>
+        <p>en la Segunda Guerra</p>
+        <p>Mundial.</p>
       </section>
     </main>
     <script src="./script.js"></script>
