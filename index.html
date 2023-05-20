@@ -34,42 +34,51 @@
       </h5>
     </header>
     <main>
-      <section>
-        <textarea
-          class="text-area"
-          cols="30"
-          rows="10"
-          placeholder="Ingrese el texto aqui."
-        ></textarea>
+      <section class="seccion">
         <div>
+          <textarea
+            class="textarea ingreso"
+            cols="30"
+            rows="10"
+            placeholder="Ingrese el texto aqui."
+          ></textarea>
           <h6 class="informacion">Sólo letras minúsculas y sin acentos</h6>
         </div>
         <div class="botones">
-          <button class="btn-encriptar" onclick="btnEncriptar()">
-            E
-          </button>
-          <div id="panel1" class="panel">Tecla: Encriptar</div>
-          <button class="btn-desencriptar" onclick="btnDesencriptar()">
-            D
-          </button>
-          <div id="panel2" class="panel">Tecla: Desencriptar</div>
+          <div class="contenedor-boton">
+            <button class="boton" onclick="btnEncriptar()">
+              E
+            </button>
+            <div class="panel">Tecla: Encriptar</div>
+          </div>
+          <div class="contenedor-boton">
+            <button class="boton" onclick="btnDesencriptar()">
+              D
+            </button>
+            <div class="panel">Tecla: Desencriptar</div>
+          </div>
         </div>
       </section>
 
-      <section class="encriptado">
-        <textarea id="mensaje" class="mensaje" cols="20" rows="10"></textarea>
-        <button class="btn-copiar" onclick="btnCopiar()">C</button>
-        <div class="panel">Tecla: Copiar</div>
+      <section class="seccion">
+        <textarea id="mensaje" class="textarea mensaje" cols="20" rows="10"></textarea>
+        
+        <div class="contenedor-boton">
+          <button class="boton" onclick="btnCopiar()">
+            C
+          </button>
+          <div class="panel">Tecla: Copiar</div>
+        </div>
       </section>
 
-      <section class="enigma">
-        <p>Esta antigüedad es</p>
-        <p>"Enigma", la máquina</p>
-        <p>de cifrado más famosa</p>
-        <p>del mundo.</p>
-        <p>Jugó un papel clave</p>
-        <p>en la Segunda Guerra</p>
-        <p>Mundial.</p>
+      <section class="enigma seccion">
+        <p>Esta antigüedad es
+        "Enigma", la máquina
+        de cifrado más famosa
+        del mundo.
+        Jugó un papel clave
+        en la Segunda Guerra
+        Mundial.</p>
       </section>
     </main>
     <script src="./script.js"></script>

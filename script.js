@@ -1,4 +1,4 @@
-const textArea = document.querySelector(".text-area");
+const textArea = document.querySelector(".ingreso");
 const mensaje = document.querySelector(".mensaje");
 
 // La letra "e" es convertida para "enter"
