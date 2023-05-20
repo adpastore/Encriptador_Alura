@@ -1,5 +1,6 @@
 const textArea = document.querySelector(".ingreso");
 const mensaje = document.querySelector(".mensaje");
+const teclaSound = document.getElementById("teclaSound");
 
 // La letra "e" es convertida para "enter"
 // La letra "i" es convertida para "imes"
@@ -23,6 +24,7 @@ function btnEncriptar() {
     mensaje.value = textoEncriptado;
     textArea.value = "";
     mensaje.style.backgroundImage = "none";
+    teclaSound.play();
 }
 
 // Función que encripta
@@ -45,6 +47,7 @@ function btnDesencriptar() {
   const textoEncriptado = desencriptar(textArea.value);
   mensaje.value = textoEncriptado;
   textArea.value = "";
+  teclaSound.play();
 }
 
 //Función que desencripta
@@ -66,7 +69,12 @@ function desencriptar(stringDesencriptada) {
 function btnCopiar() {
   let textarea = document.getElementById("mensaje");
   let texto = textarea.value;
-
+  let textareaIngreso = document.querySelector(".textarea.ingreso");
+  let textareaMensaje = document.getElementById("mensaje");
+  
+  // Copia el mensaje al Area de texto a codifica/decodificar
+  textareaIngreso.value = textareaMensaje.value;
+  
   // Crea un elemento de texto temporal
   let elementoTemporal = document.createElement("textarea");
   elementoTemporal.value = texto;
@@ -81,5 +89,16 @@ function btnCopiar() {
     
   // Elimina el texto de la memoria
   document.body.removeChild(elementoTemporal);
+  teclaSound.play();
 
+
+}
+
+function pegarDelPortapapeles() {
+  navigator.clipboard.readText()
+    .then((texto) => {
+      let textarea = document.getElementById("textarea ingreso");
+      textarea.value = texto;
+    })
+    
 }

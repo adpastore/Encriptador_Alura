@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+    rel="stylesheet"
     />
     <title>Encriptador</title>
   </head>
@@ -34,6 +34,7 @@
       </h5>
     </header>
     <main>
+      <audio id="teclaSound" src="./imagenes/tecla.mp3"></audio>
       <section class="seccion">
         <div>
           <textarea
@@ -57,12 +58,12 @@
             </button>
             <div class="panel">Tecla: Desencriptar</div>
           </div>
-        </div>
+      </div>
       </section>
-
       <section class="seccion">
         <textarea id="mensaje" class="textarea mensaje" cols="20" rows="10"></textarea>
         
+        <!-- Accion boton copiar -->
         <div class="contenedor-boton">
           <button class="boton" onclick="btnCopiar()">
             C
