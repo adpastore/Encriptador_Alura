@@ -131,7 +131,7 @@ main {
   background-image: url("./imagenes/maquina-sin-fondo.png");
   background-repeat: no-repeat;
   background-size: 53%;
-  color: #8a3871;
+  color: #a6e200;
 }
 .contenedor-boton{
   display: flex;
@@ -166,7 +166,7 @@ footer {
   font-size: 1.5vw;
   color: #553E22;
   justify-content:center;
-  align-items: center;
+  
 }
 .imagen-foot{
   height: 3vw;
@@ -267,7 +267,9 @@ main {
       height: 211px;
       padding: 3%; 
       background-size: 35%;
-      color: #8a3871;
+      color: #a6e200;
+      font-size: 43px;
+      
 }
 .contenedor-boton{
   width: 150px;
