@@ -1,10 +1,4 @@
  * {
-  font-family: 'VT323', monospace;
-  font-weight: 400;
-  font-size: 2vw;
-  line-height: 2vw;
-  overflow: hidden;
-  position: relative;
   margin: 0; /*Reset*/
   padding: 0; /*Reset*/
   box-sizing: border-box; /*Reset*/
@@ -15,14 +9,13 @@ body {
   background-repeat: no-repeat;
   background-size:cover;
   width: 100vw;
-  height: 100vh;
+  height: 77vh;
 }
 
 header {
   display: flex;
-  padding: 1vw 2vw;
+  padding: 1.5vw 1.5vw;
   align-items: center;
-  position: fixed;
 }
 
 .logo {
@@ -42,7 +35,7 @@ header {
 main {
   display: flex;
   justify-content: space-evenly;
-  padding: 6vw 1vw 1vw;
+  padding: 0vw 1vw 1vw;
   position: relative;
   width: 100%;
   height: 100%;
@@ -56,37 +49,19 @@ main {
   justify-content: space-between;
 }
 
-.enigma {
-  max-width: 15vw;
-  flex-direction: column;
-}
-
-.enigma p {
-  font-size: 1.2vw; 
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 2vw;
-  color: #fefffd;
-  text-shadow: 0.3vw 0.3vw 0.3vw #000, -0.1vw -0.1vw 0.1vw rgba(255, 255, 255, 0.131);
-}
-
-.maquina{
-  height: 20vw;
-  width: 30vw;
-  border: 1vw solid;
-}
-
 .textarea{
   background: #E09C4E;
   background-color: rgba(226, 148, 58, 0.3);
   border: none;
   border-radius: 1vw; 
   padding: 0.5vw; 
+  font-family: 'VT323', monospace;
+  font-size: 3vw;
 }
 
 .textarea:focus {
   outline: none;
 }
-
 .ingreso{
   height: 17vw;  
   width: 45vw;  
@@ -97,11 +72,13 @@ main {
 
 .ingreso::placeholder {
   color: #6bc207;
+  font-family: 'VT323', monospace;
+  font-size: 3vw;
 }
-
 .informacion {
+  font-family: 'VT323', monospace;
+  font-size: 2.5vw;
   color: #80d105;
-  font-size: 1.5vw;
   margin-top: 0.8vw;
   margin-left: 1vw;
 }
@@ -113,24 +90,6 @@ main {
   justify-content:space-around;
   align-items: center;
 }
-
-.mensaje {
-  height: 25vw;  
-  width: 24vw; 
-  background-position: center;
-  background-image: url("./imagenes/maquina-sin-fondo.png");
-  background-repeat: no-repeat;
-  background-size: 60%;
-  color: #8a3871;
-}
-
-.contenedor-boton{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1vw;
-}
-
 .boton {
   background-color: #060000;
   border: 0.2vw solid silver;
@@ -155,6 +114,7 @@ main {
 
 .panel {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vw;
   color: rgb(38, 37, 37);
   text-shadow: 0.2vw 0.2vw 0.2vw rgba(255, 252, 252, 0.776), -0.2vw -0.2vw 0.2vw rgba(103, 99, 99, 0.741);
   background-image: url(./imagenes/oxido.jpg);
@@ -163,119 +123,178 @@ main {
   padding: 1vw;  
   box-shadow: 0.2vw 0.5vw 0.9vw 0px #444C44;
 }
+.mensaje {
+  overflow: hidden;
+  height: 25vw;  
+  width: 24vw; 
+  background-position: center;
+  background-image: url("./imagenes/maquina-sin-fondo.png");
+  background-repeat: no-repeat;
+  background-size: 53%;
+  color: #8a3871;
+}
+.contenedor-boton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw;
+}
+
+.enigma {
+  max-width: 15vw;
+  flex-direction: column;
+}
+
+.enigma p {
+  font-size: 1.2vw; 
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 3vw;
+  color: #fefffd;
+  text-shadow: 0.3vw 0.3vw 0.3vw #000, -0.1vw -0.1vw 0.1vw rgba(255, 255, 255, 0.131);
+}
+
+.maquina{
+  height: 15vw;
+  width: 20vw;
+  border: 0.5vw solid;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5vw;
+  color: #553E22;
+  justify-content:center;
+  align-items: center;
+}
+.imagen-foot{
+  height: 3vw;
+  width: 3.5vw;
+  margin-right: 1vw;
+  
+}
+}
+
 
 @media screen and (max-width: 980px) {
   
-  body{
+body{
     background-repeat: inherit;
     background-size: auto;
     width: auto;
-  }
-  main {
-    flex-direction: column;
-  }
-
-  header {
+}
+  
+header {
     display:flex;
     flex-direction: column;
     align-items: center;
     padding: 1vw 2vw;
     width: auto;
-  }
+}
 
-  header .logo{
-      width: 20px;
-      height: 40px; 
+header .logo{
+      width: 40px;
+      height: 70px; 
       padding: 2px;
-  }
+}
   
-  header .bunker{
+header .bunker{
       text-align: center;
-      font-size: 14px;
-      line-height: 17px;
-  } 
-  
-  .seccion{
-    margin-top: 5%;
-  }
-  .ingreso {
+      font-size: 25px;
+      line-height: 32px;
+} 
+main {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: 164px;
-    padding: 3%;
-    margin-top: 11%;
-    font-size: 28px;
+}
+.seccion{
+    padding: 1vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.ingreso {
+    width: 100%;
+    padding: 2%;
+    font-size: 38px;
+    height: 244px;
+    margin-top: 55px;
 }
     
-    .ingreso::placeholder{
-      margin-left: 10px;
-    }
-    
-    .informacion{
-      font-size: 15px;
-      height: 20px;
-    }
+.ingreso::placeholder {
+  color: #6bc207;
+  font-family: 'VT323', monospace;
+  font-size: 92%;
 
-    .botones {
-      display: flex;
+}
+.informacion{
+      font-size: 38px;
+      height: 45px;
+      line-height: 19px;
+}
+.botones {
       width: 100%;
-      margin-top: 0.5vw;
-      justify-content:space-around;
       align-items: center;
-    }
+      height: 114px;
+}
 
-    .boton {
+.boton {
       border: 2px solid silver;
-      border-radius: 25px; 
+      border-radius: 28px; 
       color: #eee0e0;
       cursor: pointer;
       height: 55px;  
       width: 55px;  
       font-size: 11.5vw; 
       margin-bottom: 15px;
-    }
+}
 
-    .contenedor-boton{
-      width: 150px;
-    }
-    .panel {
+.panel {
       font-family: monospace;
       text-align: center;
-      font-size: 22px;
+      font-size: 25px;
       line-height: 17px;
-      width: 150px;
+      width: 169px;
       margin-top: -12px;
       border-radius: 1vw;
       background-size: 42vw; 
       padding: 1vw;  
-    }
-    
-    .mensaje {
+}
+.mensaje {
       width: 100%;
-      height: 131px;
+      height: 211px;
       padding: 3%; 
-      background-size: 24%;
+      background-size: 35%;
       color: #8a3871;
-    }
-
-    .enigma {
+}
+.contenedor-boton{
+  width: 150px;
+}
+.enigma {
       flex-direction: row;
       margin: 0 auto;
-      max-width: 90%;
-  }
+      max-width: 100%;
+}
 
-    .enigma p {
-      font-size: 15px; 
+.enigma p {
+      font-size: 22px; 
       font-family: Arial, Helvetica, sans-serif;
       line-height: 100%; 
-    }
+}
 
-    .maquina{
-      height: 60px;
-      width: 80px;
+.maquina{
+      height: 97px;
+      width: 111px;
       border: 3px solid;
-      margin-right: 200px;
-    }
-  }
+      
+}
+}
   
 
 
