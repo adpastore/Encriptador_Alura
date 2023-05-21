@@ -220,7 +220,7 @@ main {
     padding: 2%;
     font-size: 38px;
     height: 244px;
-    margin-top: 55px;
+    margin-top: 10px;
 }
     
 .ingreso::placeholder {
@@ -237,7 +237,7 @@ main {
 .botones {
       width: 100%;
       align-items: center;
-      height: 114px;
+      height: 124px;
 }
 
 .boton {
