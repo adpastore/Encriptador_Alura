@@ -18,13 +18,36 @@ let matrizCodigo = [
   ["u", "ufat"],
 ];
 
-//Crea la función para el botón de encriptar
+// Crea la función para el botón de encriptar
 function btnEncriptar() {
-    const textoEncriptado = encriptar(textArea.value);
+  const textoIngresado = textArea.value.trim();
+
+  if (textoIngresado === "") {
+    alert("Ingrese un texto antes de encriptar.");
+    return;
+  }
+
+  const textoValidado = validarTexto(textoIngresado);
+
+  if (textoValidado) {
+    const textoEncriptado = encriptar(textoValidado);
     mensaje.value = textoEncriptado;
     textArea.value = "";
     mensaje.style.backgroundImage = "none";
     teclaSound.play();
+  }
+}
+// Función que valida el texto ingresado
+function validarTexto(texto) {
+  const textoSinAcentos = quitarAcentos(texto);
+  const textoSinCaracteresEspeciales = textoSinAcentos.replace(/[^a-z\s]/g, '');
+  
+  if (texto !== textoSinCaracteresEspeciales) {
+    alert("Sólo se permiten letras minúsculas sin acentuación y espacios.");
+    return null;
+  }
+  
+  return textoSinCaracteresEspeciales;
 }
 
 // Función que encripta
@@ -40,6 +63,11 @@ function encriptar(stringEncriptada) {
     }
   }
   return stringEncriptada;
+}
+
+// Función para quitar acentos
+function quitarAcentos(texto) {
+  return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
 // Función del botón desencriptar
