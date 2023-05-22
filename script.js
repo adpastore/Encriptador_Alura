@@ -43,7 +43,7 @@ function validarTexto(texto) {
   const textoSinCaracteresEspeciales = textoSinAcentos.replace(/[^a-z\s]/g, '');
   
   if (texto !== textoSinCaracteresEspeciales) {
-    alert("Sólo se permiten letras minúsculas sin acentuación y espacios.");
+    alert("No se permiten números, acentos ni carateres especiales.");
     return null;
   }
   
