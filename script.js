@@ -8,7 +8,6 @@ const teclaSound = document.getElementById("teclaSound");
 // La letra "o" es convertida para "ober"
 // La letra "u" es convertida para "ufat"
 
-
 //Matriz de codificación
 let matrizCodigo = [
   ["e", "enter"],
@@ -20,7 +19,7 @@ let matrizCodigo = [
 
 // Crea la función para el botón de encriptar
 function btnEncriptar() {
-  const textoIngresado = textArea.value.trim();
+  const textoIngresado = textArea.value.trim(); // .trim elimina espacio vacios por delante y atras
 
   if (textoIngresado === "") {
     alert("Ingrese un texto antes de encriptar.");
@@ -40,13 +39,15 @@ function btnEncriptar() {
 // Función que valida el texto ingresado
 function validarTexto(texto) {
   const textoSinAcentos = quitarAcentos(texto);
-  const textoSinCaracteresEspeciales = textoSinAcentos.replace(/[^a-z\s]/g, '');
-  
+  const textoSinCaracteresEspeciales = textoSinAcentos.replace(/[^a-z\s]/g, ""); //Elimina las acentuadas
+
   if (texto !== textoSinCaracteresEspeciales) {
-    alert("No se permiten mayúsculas, números, acentos ni carateres especiales.");
+    alert(
+      "No se permiten mayúsculas, números, acentos ni carateres especiales."
+    );
     return null;
   }
-  
+
   return textoSinCaracteresEspeciales;
 }
 
@@ -54,12 +55,9 @@ function validarTexto(texto) {
 function encriptar(stringEncriptada) {
   stringEncriptada = stringEncriptada.toLowerCase();
 
-  for (let i = 0; i < matrizCodigo.length; i++) {
-    if (stringEncriptada.includes(matrizCodigo[i][0])) {
-      stringEncriptada = stringEncriptada.replaceAll(
-        matrizCodigo[i][0],
-        matrizCodigo[i][1]
-      );
+  for (const element of matrizCodigo) {
+    if (stringEncriptada.includes(element[0])) {
+      stringEncriptada = stringEncriptada.replaceAll(element[0], element[1]);
     }
   }
   return stringEncriptada;
@@ -67,7 +65,7 @@ function encriptar(stringEncriptada) {
 
 // Función para quitar acentos
 function quitarAcentos(texto) {
-  return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 // Función del botón desencriptar
@@ -81,52 +79,27 @@ function btnDesencriptar() {
 //Función que desencripta
 function desencriptar(stringDesencriptada) {
   stringDesencriptada = stringDesencriptada.toLowerCase();
-  for (let i = 0; i < matrizCodigo.length; i++) {
-    if (stringDesencriptada.includes(matrizCodigo[i][1])) {
+  for (const element of matrizCodigo) {
+    if (stringDesencriptada.includes(element[1])) {
       stringDesencriptada = stringDesencriptada.replaceAll(
-        matrizCodigo[i][1],
-        matrizCodigo[i][0]
+        element[1],
+        element[0]
       );
     }
   }
-
   return stringDesencriptada;
 }
 
-// Función del botón copiar
 function btnCopiar() {
-  let textarea = document.getElementById("mensaje");
-  let texto = textarea.value;
-  let textareaIngreso = document.querySelector(".textarea.ingreso");
-  let textareaMensaje = document.getElementById("mensaje");
-  
-  // Copia el mensaje al Area de texto a codifica/decodificar
-  textareaIngreso.value = textareaMensaje.value;
-  
-  // Crea un elemento de texto temporal
-  let elementoTemporal = document.createElement("textarea");
-  elementoTemporal.value = texto;
-  document.body.appendChild(elementoTemporal);
-
-  // Selecciona el contenido del elemento de texto temporal
-  elementoTemporal.select();
-  
-  // Copia al portapapeles
-  navigator.clipboard.writeText(texto)
-  .then(function() {});
-    
-  // Elimina el texto de la memoria
-  document.body.removeChild(elementoTemporal);
-  teclaSound.play();
-
-
+  let texto = document.getElementById("mensaje").value;               //asigna un id "mensaje" a los textos a copiar
+  let textareaIngresar = document.querySelector(".textarea.ingreso"); //identifica el destino y le asigna una variable
+  textareaIngresar.value = texto;                                     // A la variable de destino le asigna el "hola"
+  navigator.clipboard.writeText(texto).then(function() {});           //Copia en el portapapeles el "hola"
+  teclaSound.play();                                                  //Da el sonido de tecla
 }
 
-function pegarDelPortapapeles() {
-  navigator.clipboard.readText()
-    .then((texto) => {
-      let textarea = document.getElementById("textarea ingreso");
-      textarea.value = texto;
-    })
-    
+function pegarDelPortapapeles() {                                     //Pegar en destino
+  navigator.clipboard.readText().then((texto) => {                    //Lee el portapapeles
+    document.querySelector(".textarea.ingreso").value = texto;        //Lo asigna al destino
+  });
 }
