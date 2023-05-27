@@ -91,9 +91,9 @@ function desencriptar(stringDesencriptada) {
 }
 
 function btnCopiar() {
-  let texto = document.getElementById("mensaje").value;               //asigna a texto el valor "hola"
+  let texto = document.getElementById("mensaje").value;               //asigna a texto el valor "Ej:hola"
   let textareaIngresar = document.querySelector(".textarea.ingreso"); //identifica el destino y le asigna una variable
-  textareaIngresar.value = texto;                                     // A la variable de destino le asigna el "hola"
+  textareaIngresar.value = texto;                                     //A la variable de destino le asigna el "hola"
   navigator.clipboard.writeText(texto).then(function() {});           //Copia en el portapapeles el "hola"
   teclaSound.play();                                                  //Da el sonido de tecla
 }
