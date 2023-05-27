@@ -95,11 +95,7 @@ function btnCopiar() {
   let textareaIngresar = document.querySelector(".textarea.ingreso"); //identifica el destino y le asigna una variable
   textareaIngresar.value = texto;                                     //A la variable de destino le asigna el "hola"
   navigator.clipboard.writeText(texto).then(function() {});           //Copia en el portapapeles el "hola"
-  teclaSound.play();                                                  //Da el sonido de tecla
-}
-
-function pegarDelPortapapeles() {                                     //Pegar en destino
   navigator.clipboard.readText().then((texto) => {                    //Lee el portapapeles
-    document.querySelector(".textarea.ingreso").value = texto;        //Lo asigna al destino
-  });
+    document.querySelector(".textarea.ingreso").value = texto; });    //Lo asigna al destino
+  teclaSound.play();                                                  //Da el sonido de tecla
 }
